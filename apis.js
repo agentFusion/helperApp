@@ -21,7 +21,7 @@ export async function initApis() {
     app.options("*", cors());
     const expressServer = http.createServer(app);
     app.listen(port, () => {
-        console.log(`done. now open  http://localhost:${port} from your browser.`);
+        console.log(`done. now the AgentFusion web-app can connect. go to the AgentFusion setting(left menu) and set model providers to helperApp .`);
         app.post("/embedder", async (req, res) => {
             try {
                 res.setHeader("Access-Control-Allow-Origin", "*");
@@ -50,24 +50,6 @@ export async function initApis() {
                 return null;
             }
         });
-        app.get('/index.html', async (req, res) => {
-            const sres = await (await fetch(sharedVars.configs.finalHost + '/index.html')).text();
-            res.send(sres);
-        });
-        app.get('/', async (req, res) => {
-            const sres = await (await fetch(sharedVars.configs.finalHost + '/')).text();
-            res.send(sres);
-        });
-        app.get('/service-worker.js', async (req, res) => {
-            const sres = await (await fetch(sharedVars.configs.finalHost + '/service-worker.js')).text();
-            res.type('text/javascript');
-            res.send(sres);
-        });
-        // app.get('/audioRecDecoder.worklet.js', async (req, res) => {
-        //     const sres = await (await fetch(sharedVars.configs.finalHost + '/audioRecDecoder.worklet.js')).text();
-        //     res.type('text/javascript');
-        //     res.send(sres);
-        // });
         app.post("/imgCap", async (req, res) => {
             try {
                 res.setHeader("Access-Control-Allow-Origin", "*");
@@ -91,7 +73,7 @@ export async function initApis() {
                 res.setHeader("Access-Control-Allow-Origin", "*");
                 const converted = new Float32Array(req.body.buffer);
                 const result = await transcripter(converted);
-                // console.log(result);
+                console.log(result);
                 if (result) {
                     if (result.text) {
                         return res.json({ output: result.text });

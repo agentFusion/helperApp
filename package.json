@@ -5,14 +5,11 @@
   "main": "index.js",
   "dependencies": { 
     "express": "4.18.2",
-    "body-parser": "1.20.2",
-    "cors": "2.8.5",
     "onnx-proto": "4.0.4",
     "onnxruntime-common": "1.19.2",
     "onnxruntime-node": "1.19.2",
     "onnxruntime-web": "1.20.0-dev.20241016-2b8fc5529b", 
     "@huggingface/transformers": "3.0.0"
-
   },
   "devDependencies": {}, 
   "author": "AminZarei72",

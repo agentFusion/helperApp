@@ -1,6 +1,6 @@
 export default function getConfigs() {
     return {
-        finalHost: 'https://agentFusion.github.io',
+        finalHost: 'http://agentFusion.github.io',
         port: 4382,
         vectorSize: 384,
         threads: 8,
