@@ -3,6 +3,7 @@ import getConfigs from "./configs.js";
 const configs = getConfigs();
 export class sharedVars {
     static configs = configs;
+    static passedArgs = {};
     static embedderPipe;
     static ort = ort;
     static rerankerPipe_model;

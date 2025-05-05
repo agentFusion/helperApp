@@ -72,7 +72,10 @@ export async function initApis() {
             try {
                 res.setHeader("Access-Control-Allow-Origin", "*");
                 const converted = new Float32Array(req.body.buffer);
-                const result = await transcripter(converted);
+                const result = await transcripter({
+                    audio: converted,
+                    language: sharedVars.passedArgs['language'] ?? 'en'
+                });
                 console.log(result);
                 if (result) {
                     if (result.text) {
