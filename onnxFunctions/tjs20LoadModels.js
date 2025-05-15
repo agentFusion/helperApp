@@ -9,7 +9,7 @@ export async function tjs20LoadModels() {
     });
     console.log('loading reranker model');
     const model_id = 'jinaai/jina-reranker-v2-base-multilingual';
-    sharedVars.rerankerPipe_model = await XLMRobertaModel.from_pretrained(model_id, { dtype: 'fp32' });
+    sharedVars.rerankerPipe_model = await XLMRobertaModel.from_pretrained(model_id, { dtype: 'q8' });
     sharedVars.rerankerPipe_tokenizer = await AutoTokenizer.from_pretrained(model_id);
     console.log('loading img captioner model');
     await imgCapInit();

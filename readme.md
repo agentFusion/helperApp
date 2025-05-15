@@ -27,7 +27,7 @@
 }
 ---------------
 - note: wait for  models to download or download them manually and put them in "cache/"
-    - jinaai/jina-reranker-v2-base-multilingual/  (fp32)
+    - jinaai/jina-reranker-v2-base-multilingual/  (q8)
     - onnx-community/Florence-2-base/ (fp32)
     - sentence-transformers/all-MiniLM-L6-v2/ (q8)
     - onnx-community/whisper-turbo/  (q8)
